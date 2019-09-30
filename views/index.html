@@ -1,0 +1,41 @@
+{% extends './layouts/base.html' %}
+{% block content %}
+<h1 class="display-4 text-center">Home</h1>
+<hr />
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="/products">
+      <img class="d-block w-100" src="https://images.tcdn.com.br/img/img_prod/556696/1558791169_banner-optimum-nutrition-forja-suplementos.jpg" width="1920px" height="400px"  alt="First slide">
+    </a>
+    </div>
+    <div class="carousel-item">
+      <a href="/products">
+      <img class="d-block w-100" src="http://www.mmnutritiondistribuidora.com.br/img/optimum-nutrition-top-banner.png" width="1920px" height="400px" alt="Second slide">
+      </a>
+    </div>
+    <div class="carousel-item">
+        <a href="/products">
+      <img class="d-block w-100" src="https://myhealthpantry.com.au/wp-content/uploads/2018/11/Optimum-Nutrition-Gold-Standard-Whey-banner.jpg" width="1920px" height="400px"   alt="Third slide">
+        </a>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
+
+
+{% endblock %}
+{% block title %}
+  Pagina inicial
+{% endblock %}
+{% block script %}
+  <script src="/js/index.js" charset="utf-8"></script>
+{% endblock %}

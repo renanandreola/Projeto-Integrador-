@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title%} {% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    {% block styles %}
+    {% endblock %}
+  </head>
+  <body style="background-image: url()">
+    <div class="container">
+      <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">RMA SUPLEMENTOS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register"><strong>Cadastre-se</strong></a>
+            </li>
+          </ul>
+          <span class="float-right mr-3">
+            <a href="/cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge badge-danger" id="cart-items"></span>
+            </a>
+          </span>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar produtos" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Pesquisar</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+      <div class="mt-5">
+      {% block content %}
+      {% endblock %}
+      </div>
+
+      
+<footer class="page-footer font-small stylish-color-dark pt-4" style="background-image: url()">
+  <hr>
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+  
+            <!-- Content -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">RMA Suplementos</h5>
+            <p>
+                CNPJ: 00.000.000/0000-00 <br>
+                CEP: 00000-000           <br>
+                Rua Teste, 207           <br>
+                Bairro: Teste            <br>
+                Cidade: Erechim / RS     <br>
+                Telefone: 54 1234-5678</p>
+    
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+  
+            <!-- Content -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Atendimento</h5>
+            <p>Seg. à Sex: 8h às 18h. <br>
+               Sáb: 8h às 12h.        <br>            
+               Dom e Feriados: Fechado.</p>
+    
+          </div>
+          <!-- Grid column -->
+  
+         <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  <hr>
+  <div class="text-center text-muted">
+    <p>Siga-nos nas redes sociais</p>
+  </div>
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-3">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-3">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-3">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-3">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-3">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
+    <div class="text-center text-muted">
+        <p class="small">rmasuplementos.com.br <i class="fas fa-copyright"></i> Todos direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" charset="utf-8"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/js/base.js" charset="utf-8"></script>
+    {% block script %}
+    {% endblock %}
+  </body>
+</html>
