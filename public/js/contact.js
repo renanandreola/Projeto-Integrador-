@@ -14,21 +14,16 @@ function send (event) {
   var result = $("#result");
 
   if (name.split(" ").length < 2) {
-    errors.push('<div class="alert alert-danger" role="alert">Preencher nome e sobrenome</div>');
+    toastr["error"]("Preencher nome e sobrenome");
   }
   if (email=="") {
-    errors.push('<div class="alert alert-danger" role="alert">Campo e-mail obrigatório</div>');
+    toastr["error"]("Campo email obrigatório");
   }
   if (msg=="") {
-    errors.push('<div class="alert alert-danger" role="alert">Digite sua mensagem</div>');
-  }
-  if (errors.length>0) {
-    //result.innerHTML = errors.join("</br>"); Imprimir o result javascript puro
-    $("#result").html(errors.join("</br>"))
+    toastr["error"]("Digite sua mensagem");
   }
   else {
-    //result.innerHTML = (name + ", parabéns! seus dados foram preenchidos com sucesso.");Imprimir o result javascript puro
-    $("#result").html('<div class="alert alert-success" role="alert">' + name + ', parabéns sua mensagem foi enviada com sucesso!' + '</div>');
+    toastr["success"](name + ", parabéns sua mensagem foi enviada com sucesso!");
     clear();
   }
 }
