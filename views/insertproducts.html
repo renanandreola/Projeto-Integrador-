@@ -1,0 +1,47 @@
+{% extends './layouts/base.html' %}
+
+{% block content %}
+<h1 class="display-4 text-center">Inserir Produtos</h1>
+<hr />
+<form onsubmit="send(event)">
+
+    <div class="col-12">
+      <label>Nome</label>
+      <input type="text" name="" value="" id="name" class="form-control">
+    </div>
+
+    <div class="col-12">
+      <label>Preço</label>
+      <input type="number" name="" value="" id="price" class="form-control">
+    </div>
+    <br>
+
+    <div class="form-group green-border-focus col-12">
+      <label for="exampleFormControlTextarea5">Descrição</label>
+      <textarea class="form-control" id="description" rows="3"></textarea>
+    </div>
+
+    <div class="col-12">
+      <label>URL</label>
+      <input type="url" name="url" value="" id="url" class="form-control">
+    </div>
+<br>
+    <div class="row">
+      <div class="col-12 mt-2">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </div>
+</form>
+</div>
+
+
+
+{% endblock %}
+
+{% block title %}
+  Contato
+{% endblock %}
+
+{% block script %}
+  <script src="/js/insertproducts.js" charset="utf-8"></script>
+{% endblock %}

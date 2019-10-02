@@ -5,8 +5,11 @@ module.exports = new Schema({
     email: String,
     password: String,
     address: String,
-    zipcode: String,
+    number: String,
+    complement: String,
+    cep: String,
     neighborhood: String,
     city: String,
-    state: String
+    state: String,
+    phone: String,
 });

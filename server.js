@@ -99,6 +99,11 @@ app.get('/register', (req, res) => {
   res.render('register.html');
 });
 
+app.get('/insertproducts', (req, res) => {
+  res.render('insertproducts.html');
+});
+
+
 app.get('/artur', function (req, res) {
   res.render('artur.html');
 });
@@ -136,7 +141,14 @@ app.post('/client', (req, res) => {
     console.info(client.name + ' salvo');
     res.send('ok');
   })
+});
 
+app.post('/insertproducts', (req, res) => {
+  var insertproducts = new Products(req.body);
+  insertproducts.save((err, insertproducts) => {
+    console.info(insertproducts.name + ' salvo');
+    res.send('ok');
+  })
 });
 
 
