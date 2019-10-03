@@ -7,6 +7,7 @@ function send (event) {
   var description = $("#description").val();
   var url = $("#url").val();
 
+  //VALIDAÇÃO SIMPLES DOS CAMPOS
   if (name == "") {
       toastr["error"]("Insira o nome do pruduto");
       return;
@@ -35,6 +36,7 @@ function send (event) {
       url: url
 
     }
+    //ENVIA OS DADOS PARA O MONGODB
     $.post('/insertproducts', data, function (res) {
            if(res === 'ok') {
              toastr["success"]("Produto cadastrado com sucesso!");
@@ -44,15 +46,6 @@ function send (event) {
             }
    })
  }
-
-
-
-
-
-
-
-
-
-
-
 }
+
+// CRIA A TABELA DE PRODUTOS

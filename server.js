@@ -57,6 +57,12 @@ app.get('/products', (req, res) => {
  });
 });
 
+app.get('/insertproducts', (req, res) => {
+  Products.find((err, obj) => {
+     res.render('insertproducts.html', {products: obj});
+ });
+});
+
 app.get('/contact', (req, res) => {
   res.render('contact.html');
 });
@@ -98,11 +104,6 @@ app.get('/cart', (req, res) => {
 app.get('/register', (req, res) => {
   res.render('register.html');
 });
-
-app.get('/insertproducts', (req, res) => {
-  res.render('insertproducts.html');
-});
-
 
 app.get('/artur', function (req, res) {
   res.render('artur.html');

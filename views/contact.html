@@ -5,8 +5,12 @@
 <hr />
 <form onsubmit="send(event)">
     <div class="col-12">
-      <label>Nome Completo</label>
+      <label>Nome</label>
       <input type="text" name="" value="" id="name" class="form-control">
+    </div>
+    <div class="col-12">
+      <label>Sobrenome</label>
+      <input type="text" name="" value="" id="lastname" class="form-control">
     </div>
     <div class="col-12">
       <label>E-mail</label>
@@ -17,7 +21,7 @@
       <label for="exampleFormControlTextarea5">Deixe sua mensagem</label>
       <textarea class="form-control" id="msg" rows="3"></textarea>
     </div>
-    
+
     <div class="row">
       <div class="col-12 mt-2">
       <button type="submit" class="btn btn-primary">Enviar</button>
@@ -27,7 +31,7 @@
 <br>
 <p class="display-6">Resultado do envio:</p>
 <div class="jumbotron mt-4">
-    
+
     <p id="result"></p>
 </div>
 </div>

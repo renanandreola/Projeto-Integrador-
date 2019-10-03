@@ -32,14 +32,36 @@
     </div>
   </div>
 </form>
-</div>
+<br>
 
+<table class="table table-striped">
 
+  <thead>
+    <tr>
+      <th scope="col">Produtos</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">URL</th>
+    </tr>
+  </thead>
+  {% for item in products %}
+  <tbody>
+    <tr>
+      <th scope="row">Qtd</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.url }}</td>
+    </tr>
+  </tbody>
+    {% endfor %}
+</table>
 
 {% endblock %}
 
 {% block title %}
-  Contato
+  Inserir Produtos
 {% endblock %}
 
 {% block script %}
