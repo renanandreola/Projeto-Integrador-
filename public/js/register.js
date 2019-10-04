@@ -2,7 +2,7 @@ function send (event) {
 
   event.preventDefault();
 
-  // EXPRESSÕES EM JS PURO
+  // EXPRESSÕES EM JS PURO - PEGA INFORMAÇÕES PELO ID DO HTML
 
   //var name = document.getElementById("name").value;
   //var email = document.getElementById("email").value;
@@ -11,6 +11,7 @@ function send (event) {
 
 
   // EXPERSSÕES EM JQUEY
+  // PEGA INFORMAÇÕES PELO ID DO HTML
 
   var name = $("#name").val();
   var lastname = $("#lastname").val();
@@ -26,6 +27,7 @@ function send (event) {
   var password = $("#password").val();
   var confirmpassword = $("#confirmpassword").val();
 
+  // VÁLIDAÇÃO DOS CAMPOS DO FORMULÁRIO
   if (name == "") {
       toastr["error"]("Campo nome obrigatório");
       return;
@@ -92,7 +94,7 @@ function send (event) {
        return
   }
 
-  if (password.length < 7) {
+  if (password.length < 8) {
        toastr["error"]("Senha mínimo 8 caracteres");
        return
   }
@@ -120,10 +122,11 @@ function send (event) {
       address: address,
       number: number,
       complement: complement,
-      password: password 
-
+      password: password
 
     }
+
+    // ENVIA DADOS PARA O MONGODB
     $.post('/client', data, function (res) {
            if(res === 'ok') {
              toastr["success"]("Cadastro realizado com sucesso!");
@@ -137,7 +140,6 @@ function send (event) {
 
 
 // LIMPA CAMPOS DO FORMULÁRIO
-
 function clear (){
   $("#name").val("");
   $("#lastname").val("");

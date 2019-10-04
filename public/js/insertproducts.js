@@ -36,16 +36,37 @@ function send (event) {
       url: url
 
     }
+
+
     //ENVIA OS DADOS PARA O MONGODB
     $.post('/insertproducts', data, function (res) {
            if(res === 'ok') {
              toastr["success"]("Produto cadastrado com sucesso!");
-             $('form').trigger('reset');
+             setTimeout(function(){
+               location.reload();
+             },1500);
            } else {
              toastr["error"]("Erro: " + res);
             }
    })
- }
+  }
 }
 
-// CRIA A TABELA DE PRODUTOS
+
+// EXCLUIR ITENS DA TABELA
+$('.btn-remove').click(function () {
+  $.ajax({
+    url: '/admin/product/' + $(this).attr('id'),
+    type: 'delete',
+    success: function (r) {
+      if (r == 'ok') {
+        toastr["error"]("Produto excluido!");
+        setTimeout(function(){
+          location.reload();
+        },1500);
+      } else {
+        toastr["error"]("Produtos ", "Erro na exclusao");
+      }
+    }
+  });
+});

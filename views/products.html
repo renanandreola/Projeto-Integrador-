@@ -8,6 +8,9 @@
     <li>
       <p>{{ item.name }}</p>
       <p>{{ item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }}</p>
+      <p>
+        <img src="{{ item.url }}" width="100%" alt="">
+      </p>
       <a href="/product/{{ item.id }}" class="btn btn-outline-primary btn-block btn-sm">Ver mais</a>
     </li>
     {% endfor %}

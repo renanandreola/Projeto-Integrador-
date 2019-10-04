@@ -45,6 +45,16 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     res.render('index.html');
   });
 
+  app.delete('/admin/product/:id', (req, res) => {
+    Products.findOneAndRemove({_id: req.params.id}, (err, obj) => {
+      if(err) {
+        res.send('error');
+      }
+      res.send('ok');
+    });
+  });
+
+
 
 app.use(express.static('public'));
 app.get('/', (req, res) => {
@@ -170,11 +180,12 @@ app.get('/api/products', (req, res) => {
 });
 
 app.get('/api/product/:id', (req, res) => {
-  const product = listProducts.find((item) => {
-    return item.id == req.params.id
-  })
-  res.send(product);
-
-
-
+  Products.find({"_id": req.params.id }, (err, obj) => {
+      if (err) {
+        res.send(null);
+      } else {
+        const product = obj[0];
+        res.send(product);
+      }
+  });
 });

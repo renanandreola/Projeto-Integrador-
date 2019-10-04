@@ -2,6 +2,7 @@ function send (event) {
 
   event.preventDefault();
 
+  // PEGA ELEMENTOS PELO ID DO HTML
   var name = $("#name").val();
   var lastname = $("#lastname").val();
   var email = $("#email").val();
@@ -9,6 +10,8 @@ function send (event) {
   var errors = [];
   var result = $("#result");
 
+
+  // VALIDAÇÃO DOS CAMPOS DO FORMULÁRIO
   if (name == "") {
     toastr["error"]("Campo nome obrigatório");
     return
@@ -35,6 +38,7 @@ function send (event) {
   }
 }
 
+// LIMPA OS CAMPOS 
 function clear (){
   $("#name").val("");
   $("#lastname").val("");

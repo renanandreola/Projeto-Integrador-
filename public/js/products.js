@@ -5,7 +5,7 @@ function addToCart (product) {
   }
 
   var find = cart.find(function (item) {
-    return item.id === product.id;
+    return item._id === product._id;
   });
 
   if (find) {
@@ -21,7 +21,7 @@ function addToCart (product) {
 
 $(document).ready(function () {
   $('#addProduct').click(function () {
-    var id = location.href.match(/\d{1,4}$/g);
+    var id = $('#productId').val();
     $.get('/api/product/' + id, function (product) {
       addToCart(product);
     })

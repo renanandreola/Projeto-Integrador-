@@ -35,10 +35,12 @@
 <br>
 
 <table class="table table-striped">
-
+  <div class="mt-5">
+      <h2> Lista de produtos </h2>
+      <div id="list-products"></div>
+    </div>
   <thead>
     <tr>
-      <th scope="col">Produtos</th>
       <th scope="col">Nome</th>
       <th scope="col">Preço</th>
       <th scope="col">Descrição</th>
@@ -48,16 +50,15 @@
   {% for item in products %}
   <tbody>
     <tr>
-      <th scope="row">Qtd</th>
       <td>{{ item.name }}</td>
       <td>{{ item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }}</td>
       <td>{{ item.description }}</td>
       <td>{{ item.url }}</td>
+      <td><button class="btn btn-sm btn-danger btn-remove" id="{{ item._id }}">Excluir</button></td>
     </tr>
   </tbody>
     {% endfor %}
 </table>
-
 {% endblock %}
 
 {% block title %}
