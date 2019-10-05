@@ -4,6 +4,15 @@
 <h1 class="display-4 text-center">Inserir Produtos</h1>
 <hr />
 <form onsubmit="send(event)">
+    <div class="col-12">
+      <label>Categoria</label>
+      <select id="category" class="form-control">
+        <option value="">Selecione uma categoria</option>
+        {% for item in categories %}
+          <option value="{{ item._id }}">{{ item.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
 
     <div class="col-12">
       <label>Nome</label>
@@ -33,7 +42,7 @@
   </div>
 </form>
 <br>
-
+{% if products | length > 0 %}
 <table class="table table-striped">
   <div class="mt-5">
       <h2> Lista de produtos </h2>
@@ -41,6 +50,7 @@
     </div>
   <thead>
     <tr>
+      <th scope="col">categoria</th>
       <th scope="col">Nome</th>
       <th scope="col">Preço</th>
       <th scope="col">Descrição</th>
@@ -50,6 +60,7 @@
   {% for item in products %}
   <tbody>
     <tr>
+      <td>{{ item.category }}</td>
       <td>{{ item.name }}</td>
       <td>{{ item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }}</td>
       <td>{{ item.description }}</td>
@@ -59,6 +70,14 @@
   </tbody>
     {% endfor %}
 </table>
+{% else %}
+<div class="jumbotron">
+
+  <h5 class="text-center">Sem produtos </h5>
+</div>
+
+{% endif %}
+
 {% endblock %}
 
 {% block title %}

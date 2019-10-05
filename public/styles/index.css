@@ -1,0 +1,36 @@
+.products {
+  list-style: none;
+}
+.products li {
+  float: left;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 25%;
+  background-color: rgba(0,0,0,0.09);
+  border-right: 15px solid white;
+  min-height: 380px;
+  position: relative;
+}
+.products p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+.products li a {
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+  /* dica para alinhar elemento absoluto ao centro */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.products img {
+  max-height: 200px;
+  position: absolute;
+  bottom: 50px;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}

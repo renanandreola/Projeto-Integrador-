@@ -6,6 +6,7 @@ function send (event) {
   var price = $("#price").val();
   var description = $("#description").val();
   var url = $("#url").val();
+  var category = $("#category").val();
 
   //VALIDAÇÃO SIMPLES DOS CAMPOS
   if (name == "") {
@@ -27,13 +28,18 @@ function send (event) {
       toastr["error"]("Insira a url");
       return;
   }
+  if (category == "") {
+      toastr["error"]("Selecione uma categoria");
+      return;
+  }
 
   else {
     var data = {
       name: name,
       price: price,
       description: description,
-      url: url
+      url: url,
+      category: category
 
     }
 
@@ -47,7 +53,7 @@ function send (event) {
              },1500);
            } else {
              toastr["error"]("Erro: " + res);
-            }
+          }
    })
   }
 }

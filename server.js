@@ -6,6 +6,7 @@ const nodemailer = require('nodemailer');
 const mongoose = require("mongoose");
 const ProductsSchema = require('./schemas/Products');
 const ClientsSchema = require('./schemas/Clients');
+const CategoriesSchema = require('./schemas/Categories');
 const md5 = require('md5');
 
 
@@ -20,6 +21,7 @@ require('useful-nunjucks-filters')(env);
 
 const Products = mongoose.model('Product', ProductsSchema);
 const Clients = mongoose.model('Clients', ClientsSchema);
+const Categories = mongoose.model('Categories', CategoriesSchema);
 
 mongoose.connect(MONGODB_URL, {useNewUrlParser: true}, err => {
     if (err) {
@@ -38,28 +40,35 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser: true}, err => {
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-  }));
-  app.use(express.static('public'));
-  app.get('/', (req, res) => {
-    res.render('index.html');
-  });
-
-  app.delete('/admin/product/:id', (req, res) => {
-    Products.findOneAndRemove({_id: req.params.id}, (err, obj) => {
-      if(err) {
-        res.send('error');
-      }
-      res.send('ok');
-    });
-  });
-
-
-
+extended: true
+}));
 app.use(express.static('public'));
 app.get('/', (req, res) => {
-  res.render('index.html');
+  Products.find().sort('+price').limit(4).exec((err, obj) => {
+    console.info(obj.length);
+    res.render('index.html', {products: obj});
+  });
 });
+
+app.delete('/admin/product/:id', (req, res) => {
+  Products.findOneAndRemove({_id: req.params.id}, (err, obj) => {
+    if(err) {
+      res.send('error');
+    }
+    res.send('ok');
+  });
+});
+
+app.delete('/category/:id', (req, res) => {
+  Categories.findOneAndRemove({_id: req.params.id}, (err, obj) => {
+    if(err) {
+      res.send('error');
+    }
+    res.send('ok');
+  });
+});
+
+app.use(express.static('public'));
 
 app.get('/products', (req, res) => {
   Products.find((err, obj) => {
@@ -68,8 +77,10 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/insertproducts', (req, res) => {
-  Products.find((err, obj) => {
-     res.render('insertproducts.html', {products: obj});
+  Products.find((err, products) => {
+      Categories.find().sort('name').exec((err, categories) => {
+       res.render('insertproducts.html', {products: products, categories: categories});
+     });
  });
 });
 
@@ -115,6 +126,12 @@ app.get('/register', (req, res) => {
   res.render('register.html');
 });
 
+app.get('/categories', (req, res) => {
+  Categories.find((err, obj) => {
+     res.render('categories.html', {categories: obj});
+ });
+});
+
 app.get('/artur', function (req, res) {
   res.render('artur.html');
 });
@@ -158,6 +175,14 @@ app.post('/insertproducts', (req, res) => {
   var insertproducts = new Products(req.body);
   insertproducts.save((err, insertproducts) => {
     console.info(insertproducts.name + ' salvo');
+    res.send('ok');
+  })
+});
+
+app.post('/categories', (req, res) => {
+  var categories = new Categories(req.body);
+  categories.save((err, categories) => {
+    console.info(categories.name + ' salvo');
     res.send('ok');
   })
 });
