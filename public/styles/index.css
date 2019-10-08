@@ -34,3 +34,8 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.card {
+  border: none;
+  text-align: center;
+}

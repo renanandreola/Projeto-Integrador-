@@ -44,7 +44,7 @@ extended: true
 }));
 app.use(express.static('public'));
 app.get('/', (req, res) => {
-  Products.find().sort('+price').limit(4).exec((err, obj) => {
+  Products.find().sort('+price').limit(12).exec((err, obj) => {
     console.info(obj.length);
     res.render('index.html', {products: obj});
   });
