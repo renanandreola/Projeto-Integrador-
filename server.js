@@ -17,6 +17,9 @@ let env = nunjucks.configure('views', {
     autoescape: true,
     express: app
 });
+
+app.set('engine', env);
+
 require('useful-nunjucks-filters')(env);
 
 const Products = mongoose.model('Product', ProductsSchema);
@@ -43,6 +46,22 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 extended: true
 }));
 app.use(express.static('public'));
+
+app.use((req, res, next) => {
+  const engine = res.app.get('engine');
+  Categories.aggregate([{
+    $lookup: {
+        from: "products", // collection name in db
+        localField: "_id",
+        foreignField: "category",
+        as: "products"
+    }
+  }]).sort('name').exec((err, obj) => {
+    engine.addGlobal('categories', obj);
+    next();
+  });
+});
+
 app.get('/', (req, res) => {
   Products.find().sort('+price').limit(12).exec((err, obj) => {
     console.info(obj.length);
@@ -73,6 +92,22 @@ app.use(express.static('public'));
 app.get('/products', (req, res) => {
   Products.find((err, obj) => {
      res.render('products.html', {products: obj});
+ });
+});
+
+app.get('/c/:slug', (req, res) => {
+  Categories.aggregate([
+    {$match: {slug: req.params.slug}},
+    {
+    $lookup: {
+        from: "products", // collection name in db
+        localField: "_id",
+        foreignField: "category",
+        as: "products"
+    }
+  }]).exec((err, obj) => {
+    console.info(obj);
+     res.render('products.html', {products: obj[0].products});
  });
 });
 

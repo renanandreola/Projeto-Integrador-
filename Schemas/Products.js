@@ -1,6 +1,6 @@
 const {Schema} = require('mongoose');
 module.exports = new Schema({
-    category: String,
+    category: Schema.Types.ObjectId,
     name: String,
     price: Number,
     description: String,
