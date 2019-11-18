@@ -161,6 +161,21 @@ app.get('/register', (req, res) => {
   res.render('register.html');
 });
 
+
+
+
+
+app.get('/product', (req, res) => {
+      res.render('product.html');
+});
+
+
+
+
+
+
+
+
 app.get('/categories', (req, res) => {
   Categories.find((err, obj) => {
      res.render('categories.html', {categories: obj});
@@ -233,6 +248,7 @@ app.get('/product/:id', (req, res) => {
       }
   });
 });
+
 
 // APIs
 app.get('/api/products', (req, res) => {
