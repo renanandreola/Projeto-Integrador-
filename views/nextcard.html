@@ -1,0 +1,16 @@
+{% extends './layouts/base.html' %}
+
+{% block content %}
+<div class="p-5 jumbotron mt-4">
+  Compra concluída
+  <br>
+  <p>Seus produtos: 
+    <h1 class="display-4">{{ product.name }}</h1>
+    <h3 class="big float-right">{{ product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }} </h3>
+  </p>
+</div>
+{% endblock %}
+
+{% block title %}
+    Compra efetuada com sucesso
+{% endblock %}

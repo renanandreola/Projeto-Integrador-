@@ -5,3 +5,13 @@ form input {
 form button {
   min-width: 200px;
 }
+
+body{
+  background-color: rgb(59, 59, 59);
+}
+
+div.logo {
+  max-height: 70px;
+  max-width: 10px;
+}
+
