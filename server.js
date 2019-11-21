@@ -157,6 +157,10 @@ app.get('/cart', (req, res) => {
   res.render('cart.html');
 });
 
+app.get('/cart', (req, res) => {
+  res.render('nextcart.html');
+});
+
 app.get('/register', (req, res) => {
   res.render('register.html');
 });
@@ -221,7 +225,6 @@ app.post('/categories', (req, res) => {
     res.send('ok');
   })
 });
-
 
 app.get('/product/:id', (req, res) => {
   Products.find({"_id": req.params.id }, (err, obj) => {

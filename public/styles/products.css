@@ -34,3 +34,19 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media screen and (max-width: 420px) {
+  .products li{
+    width: 50%;
+    min-height: 380px;
+  }
+
+  .products img {
+    max-height: 200px;
+    position: absolute;
+    bottom: 50px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

@@ -97,3 +97,9 @@ $(document).ready(function () {
     })
   });
 })
+
+function send (event) {
+  var email = $("#").val()
+  var password =  $("#").val()
+
+}
