@@ -1,4 +1,8 @@
 body{
     background-color: rgb(59, 59, 59);
   }
-  
+
+  h1{
+    color: #F4B400;
+    font-family: fantasy;
+  }

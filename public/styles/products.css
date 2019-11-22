@@ -2,17 +2,23 @@ body{
   background-color: rgb(59, 59, 59);
 }
 
+h1{
+  color: #ffc107;
+  font-family: fantasy;
+}
 
 .products {
   list-style: none;
+  padding: 0;
 }
 .products li {
   float: left;
   margin-bottom: 20px;
   padding: 15px;
   width: 25%;
-  background-color: rgba(0,0,0,0.09);
-  border-right: 15px solid white;
+  background-color: grey;
+  border-right: 2px solid grey;
+  border-color: black;
   min-height: 380px;
   position: relative;
 }

@@ -1,7 +1,7 @@
 {% extends './layouts/base.html' %}
 
 {% block content %}
-  <h1 class="display-4 text-center">Produtos</h1>
+  <h1 class="display-4 text-center">PRODUTOS</h1>
   <hr />
   <ul class="products ">
     {% for item in products %}
@@ -11,7 +11,7 @@
       <p>
         <img src="{{ item.url }}" width="100% alt="">
       </p>
-      <a href="/product/{{ item._id }}" class="btn btn-outline-primary btn-block btn-sm">Ver mais</a>
+      <a href="/product/{{ item._id }}" class="btn btn-outline-warning btn-block btn-sm">Ver mais</a>
     </li>
     {% endfor %}
   </ul>

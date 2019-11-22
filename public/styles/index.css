@@ -5,14 +5,16 @@ body{
 
 .products {
   list-style: none;
+  padding: 0;
 }
 .products li {
   float: left;
   margin-bottom: 20px;
   padding: 15px;
   width: 25%;
-  background-color: rgba(0,0,0,0.09);
-  border-right: 15px solid white;
+  background-color: grey;
+  border-right: 2px solid grey;
+  border-color: black;
   min-height: 380px;
   position: relative;
 }
@@ -47,5 +49,14 @@ body{
 
 h1{
   font-family: fantasy;
-  color: black;
+  color: #F4B400;
+}
+
+div.underimages {
+  color: white;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: #F4B400;
 }
