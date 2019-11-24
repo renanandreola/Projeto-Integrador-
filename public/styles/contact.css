@@ -6,3 +6,10 @@ body{
     color: #F4B400;
     font-family: fantasy;
   }
+
+  div label {
+    color: white;
+    font-family: sans-serif;
+  }
+
+

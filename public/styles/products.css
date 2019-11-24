@@ -46,6 +46,18 @@ h1{
   transform: translateX(-50%);
 }
 
+li p.title {
+  color: black;
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+li p.value {
+  color: rgb(255, 238, 0);
+  font-family: fantasy;
+  font-size: 30px;
+}
+
 @media screen and (max-width: 420px) {
   .products li{
     width: 50%;
