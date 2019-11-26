@@ -1,8 +1,28 @@
 #cart {
   overflow-y: auto;
-  max-height: 450px;
+  max-height: 375px;
 }
 
 body{
   background-color: rgb(59, 59, 59);
+}
+
+div h6 {
+  font-family: fantasy;
+}
+
+div label {
+  font-family: fantasy;
+}
+
+div.first-box {
+  background-color: white;
+  background-image: url(https://images.pond5.com/dumbbells-animation-footage-021591981_prevstill.jpeg);
+  background-repeat: no-repeat;
+}
+
+div h5 {
+  font-family: fantasy;
+  color: #F4B400;
+  font-size: 30px;
 }

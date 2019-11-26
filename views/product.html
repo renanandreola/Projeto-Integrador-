@@ -1,15 +1,17 @@
 {% extends './layouts/base.html' %}
 
 {% block content %}
-<div class="p-5 jumbotron mt-4">
+<div class="box p-5 jumbotron mt-4">
     <h3 class="big float-right">{{ product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }} </h3>
   <h1 class="display-4">{{ product.name }}</h1>
-  <p clas="small"><strong>Ref: {{ product.id }}</strong></p>
+  <br>
+  <h2 class="description-title p-3">DESCRIÇÃO</h2>
   <p class="p-3">{{ product.description | striptags(true) | escape | nl2br }}</p>
   <input type="hidden" name="productId" id="productId" value="{{ product.id }}" />
   <p class="p-3">
     <img src="{{ product.url }}" width="50%" alt="">
   </p>
+  <p class="small"><strong>Ref: {{ product.id }}</strong></p>
   <hr />
   <button id="addProduct" class="btn float-right btn-danger">Adicionar produto</button>
   <div class="clearfix"></div>

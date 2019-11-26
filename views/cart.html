@@ -2,22 +2,24 @@
 
 {% block content %}
 <div class="row">
-  <div class="col-8 p-5">
-    <div class="jumbotron" style="background-image: url(https://portal.crea-sc.org.br/wp-content/uploads/2018/12/fundo-azul-claro.jpg)">
+  <div class="col-12 p-5">
+    <div class="first-box jumbotron">
       <h6 class="display-4">Digite seu e-mail e senha para prosseguir</h6>
       <form class="mt-5" action="index.html" method="post">
         <div class="row">
-          <div class="col-5">
-            <input type="email" required name="" value="" class="form-control" placeholder="email@email">
+          <div class="col-12">
+            <label for="">Email</label>
+            <input type="email" required name="" value="" class="form-control" placeholder="@">
           </div>
         </div>
         <div class="row">
-          <div class="col-5 mt-4">
+          <div class="col-12 mt-4">
+              <label for="">Senha</label>
             <input type="password" required placeholder="senha" name="" value="" class="form-control">
           </div>
         </div>
-        <div class="row">
-          <div class="col-5 mt-4 text-center">
+        <div class="row d-flex justify-content-center">
+          <div class="buttons col-3 mt-4 text-center">
             <button type="submit" class="btn btn-primary btn-block" name="button">Entrar</button>
             ou
             <a href="/register" class="btn btn-outline-success btn-block" name="button">Cadastre-se</a>
@@ -26,15 +28,15 @@
       </form>
     </div>
   </div>
-  <div class="col-4">
-    <div class="mt-5 jumbotron">
-      <h5 class="mb-3">Meu Carrinho</h5>
-      <div id="cart" >
-      </div>
+ 
+</div>
+<div class="col-12">
+  <div class="mt-5 jumbotron">
+    <h5 class="mb-3">Meu Carrinho</h5>
+    <div id="cart" >
     </div>
   </div>
 </div>
-
 {% endblock %}
 
 {% block title %}
