@@ -9,15 +9,17 @@ body{
 
 div h6 {
   font-family: fantasy;
+  color: #F4B400;
 }
 
 div label {
   font-family: fantasy;
+  color: #F4B400;
 }
 
 div.first-box {
   background-color: white;
-  background-image: url(https://images.pond5.com/dumbbells-animation-footage-021591981_prevstill.jpeg);
+  background-image: url(https://images5.alphacoders.com/774/774585.jpg);
   background-repeat: no-repeat;
 }
 
@@ -25,4 +27,8 @@ div h5 {
   font-family: fantasy;
   color: #F4B400;
   font-size: 30px;
+}
+
+div.cart {
+  background-color: rgb(204, 204, 204);
 }
