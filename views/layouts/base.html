@@ -17,26 +17,27 @@
     <div class="container">
       <header>
         <br>
-        <div class="logo">
-          <img src="" alt="">
-        </div>
+    
         <form class="form-inline my- my-lg-2 d-flex justify-content-center">
+            <div class="logo">
+                <img src="https://images.squarespace-cdn.com/content/v1/566e9a1025981d5723c744e4/1555338566458-O81Z6KJDOVUCW6YDWU99/ke17ZwdGBToddI8pDm48kGDpvalPb1SqHoCn1hwN0Y57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmx-YtV7KdJhhcFMxgH7DNwVWsr4BytTuzU0mdZNjZkC7ehjA8nxqmKGxR1QtMJl5J/rma.png" alt="">
+              </div>
           <input class="form-control mr-sm-1 " type="search" placeholder="Digite um produto" aria-label="Search">
           <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>
         <br>
-      <nav class="navbar navbar-expand-lg navbar navbar-light bg-light mr-2">
-        <a class="navbar-brand" href="/">RMA SUPLEMENTOS</a>
+      <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark mr-2">
+        <a class="navbar-brand ml-5" href="/">RMA Suplementos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-              <a class="nav-link btn btn-light mr-5" href="/"><strong>Página inicial</strong></a>
+              <a class="nav-link btn btn-dark ml-5" href="/"><strong>Página inicial</strong></a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link btn btn-light mr-5" href="/register"><strong>Cadastre-se</strong></a>
+              <a class="nav-link btn btn-dark ml-5" href="/register"><strong>Cadastre-se</strong></a>
             </li>
 
             <!--<li class="nav-item">
@@ -44,23 +45,23 @@
             </li>-->
 
             <li class="nav-item ">
-              <a class="nav-link btn btn-light mr-5" href="/contact"><strong>Contato</strong></a>
+              <a class="nav-link btn btn-dark ml-5" href="/contact"><strong>Contato</strong></a>
             </li>
             <div class="dropdown">
-                <button class="dropdown-toggle mr-1 btn btn-light font-weight-bold mr-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="dropdown-toggle mr-1 btn btn-dark font-weight-bold ml-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Categorias
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="page dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
                   {% for item in categories %}
-                    <li><a class="nav-link btn btn-light" href="/c/{{ item.slug }}">{{ item.name }}</a></li>
+                    <li><a class="categoriesNames nav-link btn btn-dark" href="/c/{{ item.slug }}">{{ item.name }}</a></li>
                   {% endfor %}
                 </div>
               </div>
           </ul>
-          <span class="float-right mr-3">
+          <span class="float-right mr-4">
             <a href="/cart">
-              <i class="fas fa-shopping-cart"></i>
-              <span class="badge badge-danger" id="cart-items"></span>
+              <i class="cart fas fa-shopping-cart mr-2"></i>
+              <span class="notifications badge badge-danger" id="cart-items"></span>
             </a>
           </span>
 

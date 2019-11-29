@@ -10,9 +10,9 @@ body{
   background-color: rgb(59, 59, 59);
 }
 
-div.logo {
-  max-height: 70px;
-  max-width: 10px;
+div.logo img {
+  height: 200px;
+  width: 200px;
 }
 
 footer h5 {
@@ -26,3 +26,18 @@ footer p {
 footer a {
   color: white;
 }
+
+span a i.cart {
+  color: white;
+  font-size: 30px;
+}
+
+span a span.notifications {
+  color: white;
+  background-color: #F4B400;
+  font-size: 20px;
+}
+
+div.page {
+  background-color: rgb(52, 58, 64);
+} 
