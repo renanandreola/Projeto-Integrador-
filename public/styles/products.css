@@ -58,7 +58,23 @@ li p.value {
   font-size: 30px;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
+  .products li{
+    width: 50%;
+    min-height: 380px;
+  }
+
+  .products img {
+    max-height: 200px;
+    position: absolute;
+    bottom: 50px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 575px) {
   .products li{
     width: 50%;
     min-height: 380px;

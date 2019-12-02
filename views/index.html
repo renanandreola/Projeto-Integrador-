@@ -7,33 +7,36 @@
   <div class="mr-5 col-2" style="width: 10rem;">
     <img src="https://www.boostmyshop.fr/media/catalog/product/cache/7/thumbnail/9df78eab33525d08d6e5fb8d27136e95/r/m/rma-logo-660.png" width="146px" height="146px"  alt="">
     <div class="underimages">
-      <p class="ml-2">Rápida entrega</p>
-      <p class="ml-3">Frete Grátis</p>
-      <p>Para todo o Brasil</p>
+      <p class="ml-2">Rápida entrega
+                      Frete Grátis para todo o Brasil
+    </p>
     </div>
   </div>
 
   <div class="mr-5 col-2" style="width: 10rem;" >
     <img src="https://rmadevelopment.com/wp-content/uploads/2018/12/RMA-DEV_TaxBenefitsCON.png" width="146px" height="146px" alt="...">
     <div class="underimages">
-      <p>Ótimo custo benefício</p>
-      <p class="ml-3">Preços baixos</p>
+      <p>Ótimo custo benefício
+         Preços baixos
+      </p>
     </div>
   </div>
 
   <div class="mr-5 col-2" style="width: 10rem;">
     <img src="https://blob.vivotek.com/downloadfile/Support/Warranty&RMA/support-cyber-security2019030406171056920190509075035707.png" width="146px" height="146px" alt="...">
     <div class="underimages">
-      <p class="ml-3">100% nos laudos</p>
-      <p class="ml-4">Troque sem problemas</p>
+      <p class="ml-3">100% nos laudos
+                      Trocas aceitas
+     </p>
     </div>
   </div>
 
   <div class="mr-5 col-2" style="width: 10rem;">
     <img src="https://image.winudf.com/v2/image/Y29tLmRpYWxvZ2F1c2lsaS5kaWFsb2dybWFuZXdfaWNvbl8xNTI4OTUwMzkwXzA4Mw/icon.png?w=170&fakeurl=1" width="146px" height="146px" alt="...">
     <div class="underimages">
-      <p>Produtos importados</p>
-      <p class="ml-2">Produtos originais</p>
+      <p>Produtos importados
+         Produtos originais
+      </p>
     </div>
   </div>
   </div>
@@ -72,7 +75,7 @@
 <ul class="products ">
   {% for item in products %}
   <li class=''>
-    <p class="title d-flex justify-content-center" title="{{ item.name }}">{{ item.name }}</p>
+    <p class="title" title="{{ item.name }}">{{ item.name }}</p>
     <br>
     <p class="value d-flex justify-content-center" >{{ item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }}</p>
     <p>

@@ -41,3 +41,7 @@ span a span.notifications {
 div.page {
   background-color: rgb(52, 58, 64);
 } 
+
+@media screen and (max-width: 425px) {
+
+}
