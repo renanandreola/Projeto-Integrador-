@@ -85,12 +85,30 @@ function showCart () {
 $(document).ready(function () {
   showCart();
 
+
   $('form').submit(function (event) {
     event.preventDefault();
-    $.post("/login", {email: $('#email').val(), password: $('#password').val()}, function (res) {
+    var email = $("#email").val()
+    var password =  $("#password").val()
+
+    if(email === "") {
+      toastr["error"]("Campo email vazio")
+      return
+    }
+
+    if(password === "") {
+      toastr["error"]("Campo senha vazio")
+      return
+    }
+
+    else {
+      toastr["success"]("Carregando...")
+    }
+    $.post("/login", {email: email, password: password}, function (res) {
       if (res === 'ok') {
         console.info('Logado');
         toastr["success"]("Login efetuado...");
+        window.location.href = "/nextcart?email=" + email;
       } else {
         toastr["error"]("Senha inválida");
       }
@@ -98,8 +116,26 @@ $(document).ready(function () {
   });
 })
 
-function send (event) {
-  var email = $("#").val()
-  var password =  $("#").val()
-
-}
+// function entrar() {
+//   var email = $("#email").val()
+//   var password =  $("#password").val()
+//
+//   if(email === "") {
+//     toastr["error"]("Campo email vazio")
+//     return
+//   }
+//
+//   if(password === "") {
+//     toastr["error"]("Campo senha vazio")
+//     return
+//   }
+//
+//   else {
+//     toastr["success"]("Carregando...")
+//   }
+//
+// // RECARREGA A PÁGINA //
+//
+//   window.location.href = "/nextcart?email=" + email;
+//
+// }

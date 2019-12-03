@@ -22,6 +22,8 @@ app.set('engine', env);
 
 require('useful-nunjucks-filters')(env);
 
+var port = process.env.PORT || 3000;
+
 const Products = mongoose.model('Product', ProductsSchema);
 const Clients = mongoose.model('Clients', ClientsSchema);
 const Categories = mongoose.model('Categories', CategoriesSchema);
@@ -34,7 +36,7 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser: true}, err => {
     console.info('Mongo connected');
 
 
-    app.listen(3000, () => {
+    app.listen(port, () => {
       console.log('Escutando na porta 3000');
     });
 
@@ -122,6 +124,9 @@ app.get('/insertproducts', (req, res) => {
 app.get('/contact', (req, res) => {
   res.render('contact.html');
 });
+app.get('/nextcart', (req, res) => {
+  res.render('nextcart.html');
+});
 app.get('/cart', (req, res) => {
  res.render('cart.html');
 });
@@ -166,7 +171,15 @@ app.get('/register', (req, res) => {
 });
 
 
-
+app.post('/login', (req, res) => {
+  Clients.find({'email': req.body.email, 'password': md5(req.body.password)}, (err, obj) => {
+    if (err || obj.length === 0) {
+      res.send('error');
+    } else {
+      res.send('ok');
+    }
+  })
+})
 
 
 app.get('/product', (req, res) => {
