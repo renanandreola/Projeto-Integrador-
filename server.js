@@ -4,9 +4,9 @@ const nunjucks = require('nunjucks');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const mongoose = require("mongoose");
-const ProductsSchema = require('./schemas/Products');
-const ClientsSchema = require('./schemas/Clients');
-const CategoriesSchema = require('./schemas/Categories');
+const ProductsSchema = require('./Schemas/Products');
+const ClientsSchema = require('./Schemas/Clients');
+const CategoriesSchema = require('./Schemas/Categories');
 const md5 = require('md5');
 
 
