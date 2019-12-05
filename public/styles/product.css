@@ -33,4 +33,10 @@ body{
     font-family: fantasy;
     font-size: 56px;
   }
-  
+
+  @media screen and (max-width: 768px) {
+    div.box {
+      background-image: none;
+      background-color: grey;
+    }
+  }

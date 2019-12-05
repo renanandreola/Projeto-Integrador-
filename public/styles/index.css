@@ -89,18 +89,6 @@ li p.value {
     transform: translateX(-50%);
   }
 
-  div.cards img {
-    width: 200%;
-    height: 30%;
-    padding-left: 15%;
-  }
-
-  div.underimages p {
-    color: white;
-    font-family: sans-serif;
-    font-size: 16px;
-  }
-
   div.carousel img {
     height: 200px;
   }
@@ -119,5 +107,21 @@ li p.value {
     width: 90%;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px){
+  div.carousel img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.cards div.mr-5 {
+    display: none;
+  }
+
+  h1.display-4 {
+    display: none;
   }
 }
