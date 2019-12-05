@@ -40,8 +40,101 @@ span a span.notifications {
 
 div.page {
   background-color: rgb(52, 58, 64);
-} 
+}
 
-@media screen and (max-width: 425px) {
 
+/* DISPOSITIVO MÓVEL */
+@media screen and (max-width: 320px) {
+  nav button.navbar-toggler {
+    position: absolute;
+    left: 1%;
+    width: 20%;
+    transform: translateX(-1%);
+    margin: 0!important;
+  }
+}
+
+
+
+@media screen and (max-width: 420px) {
+  form button.btn {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  nav div.dropdown {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav div.dropdown button {
+    color: grey;
+  }
+
+  nav div.dropdown .dropdown-menu {
+    position: relative;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    margin: 0!important;
+    background-color: silver;
+  }
+
+  nav div.dropdown .dropdown-menu li a {
+    background-color: silver;
+    border-color: silver;
+  }
+
+  nav div.dropdown .dropdown-menu li a.categoriesNames {
+    color: black;
+  }
+}
+
+@media screen and (max-width: 574px){
+  form button.btn {
+    width: 100%;
+  }
+
+  form div.logo {
+    height: 65px;
+  }
+
+  form div.logo img {
+    margin-top: -75px;
+  }
+
+}
+
+
+@media screen and (max-width: 768px){
+  nav div.dropdown {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav div.dropdown button {
+    color: grey;
+  }
+
+  nav div.dropdown .dropdown-menu {
+    position: absolute;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    margin: 0!important;
+    background-color: silver;
+  }
+
+  nav div.dropdown .dropdown-menu li a {
+    background-color: silver;
+    border-color: silver;
+  }
+
+  nav div.dropdown .dropdown-menu li a.categoriesNames {
+    color: black;
+  }
+
+  form button.btn {
+    font-size: 18px;
+  }
 }

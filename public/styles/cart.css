@@ -32,3 +32,15 @@ div h5 {
 div.cart {
   background-color: rgb(204, 204, 204);
 }
+
+
+/* DISPOSITIVO MÓVEL */
+@media screen and (max-width: 420px) {
+  form div.buttons button.btn  {
+    /* width: 200px; */
+  }
+
+  form div.buttons a.btn  {
+    width: 200px;
+  }
+}
