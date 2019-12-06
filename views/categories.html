@@ -1,7 +1,8 @@
 {% extends './layouts/base.html' %}
 
 {% block content %}
-<h1 class="display-4 text-center">Inserir Categorias</h1>
+<h1 class="d-flex justify-content-center">ÁREA ADMINISTRATIVA</h1>
+<p class="display-4 text-center">Inserir Categorias</p>
 <hr />
 <form onsubmit="send(event)">
 
@@ -18,8 +19,8 @@
 
 <br>
     <div class="row">
-      <div class="col-12 mt-2">
-      <button type="submit" class="btn btn-succes">Enviar</button>
+      <div class="col-12 mt-2 d-flex justify-content-center">
+      <button type="submit" class="btn btn-warning">Enviar</button>
     </div>
   </div>
 </form>
@@ -54,4 +55,5 @@
 
 {% block script %}
   <script src="/js/categories.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="/styles/categories.css">
 {% endblock %}

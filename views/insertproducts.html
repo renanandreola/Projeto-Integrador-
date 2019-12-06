@@ -3,7 +3,7 @@
 {% block content %}
 <h2 class="d-flex justify-content-center">ÁREA ADMINISTRATIVA</h2>
 <hr>
-<h1 class="display-4 text-center">INSERIR PRODUTOS</h1>
+<p class="display-4 text-center">INSERIR PRODUTOS</p>
 <hr />
 <form onsubmit="send(event)">
     <div class="col-12">
@@ -39,7 +39,7 @@
 <br>
     <div class="row">
       <div class="col-12 mt-2 d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="submit" class="btn btn-warning">Enviar</button>
     </div>
   </div>
 </form>
@@ -52,21 +52,21 @@
     </div>
   <thead>
     <tr>
-      <th scope="col">categoria</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Preço</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">URL</th>
+      <th class="thcategoryId" scope="col">Categoria/ID</th>
+      <th class="thname" scope="col">Nome</th>
+      <th class="thprice" scope="col">Preço</th>
+      <th class="thdescription" scope="col">Descrição</th>
+      <th class="thurl" scope="col">URL</th>
     </tr>
   </thead>
   {% for item in products %}
   <tbody>
     <tr>
-      <td>{{ item.category }}</td>
-      <td>{{ item.name }}</td>
-      <td>{{ item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }}</td>
-      <td>{{ item.description }}</td>
-      <td>{{ item.url }}</td>
+      <td class="categoryId">{{ item.category }}</td>
+      <td class="nameitem">{{ item.name }}</td>
+      <td class="priceitem">{{ item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }}</td>
+      <td class="descriptionitem">{{ item.description }}</td>
+      <td class="urlitem">{{ item.url }}</td>
       <td><button class="btn btn-sm btn-danger btn-remove" id="{{ item._id }}">Excluir</button></td>
     </tr>
   </tbody>
