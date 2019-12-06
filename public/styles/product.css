@@ -39,4 +39,12 @@ body{
       background-image: none;
       background-color: grey;
     }
+
+    div.box h3 {
+      font-size: 30px;
+    }
+
+    div.box h1 {
+      font-size: 30px;
+    }
   }

@@ -123,6 +123,7 @@ div.page {
     transform: translateX(-50%);
     margin: 0!important;
     background-color: silver;
+    border: 2px solid black;
   }
 
   nav div.dropdown .dropdown-menu li a {

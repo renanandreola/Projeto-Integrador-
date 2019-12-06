@@ -37,10 +37,16 @@ div.cart {
 /* DISPOSITIVO MÓVEL */
 @media screen and (max-width: 425px) {
   form div.buttons button.btn  {
-     width: 200px; 
+     width: 200px;
   }
 
   form div.buttons a.btn  {
     width: 200px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  h6.display-4 {
+    font-size: 30px;
   }
 }
