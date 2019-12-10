@@ -55,7 +55,7 @@ table tbody td.urlitem {
   white-space: nowrap;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   h2 {
     font-size: 25px;
   }
