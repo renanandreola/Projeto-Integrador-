@@ -18,4 +18,10 @@ div label {
     padding: 0 30px;
     width: 100%;
   }
+
+  h1.display-4 {
+    color: #F4B400;
+    font-family: fantasy;
+    font-size: 25px;
+  }
 }

@@ -18,12 +18,12 @@
       <header>
         <br>
 
-        <form class="form-inline my- my-lg-2 d-flex justify-content-center">
+        <form class="form-inline my- my-lg-2 d-flex justify-content-center" action="/products">
             <div class="logo">
                 <img src="https://images.squarespace-cdn.com/content/v1/566e9a1025981d5723c744e4/1555338566458-O81Z6KJDOVUCW6YDWU99/ke17ZwdGBToddI8pDm48kGDpvalPb1SqHoCn1hwN0Y57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmx-YtV7KdJhhcFMxgH7DNwVWsr4BytTuzU0mdZNjZkC7ehjA8nxqmKGxR1QtMJl5J/rma.png" alt="">
               </div>
-          <input class="form-control mr-sm-1 " type="search" placeholder="Digite um produto" aria-label="Search">
-          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Pesquisar</button>
+          <input class="form-control mr-sm-1 " type="text" name="q" placeholder="Digite um produto" aria-label="Search">
+          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" value="Search">Pesquisar</button>
         </form>
         <br>
       <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark mr-2">
@@ -59,6 +59,7 @@
                 <a class="nav-link" href="/categories">INSERIR CATEGORIAS</a>
               </li> -->
           </ul>
+
           <span class="float-right mr-4">
             <a href="/cart">
               <i class="cart fas fa-shopping-cart mr-2"></i>
@@ -149,6 +150,7 @@
   <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="/js/base.js" charset="utf-8"></script>
     {% block script %}

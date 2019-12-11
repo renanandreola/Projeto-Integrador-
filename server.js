@@ -91,9 +91,17 @@ app.delete('/category/:id', (req, res) => {
 
 app.use(express.static('public'));
 
+//pesquisa de produtos
 app.get('/products', (req, res) => {
-  Products.find((err, obj) => {
-     res.render('products.html', {products: obj});
+  const query = req.query.q;
+  let cond = [];
+  let queryObj = {};
+
+  if (query && query.length > 0) {
+    queryObj = {"name": { "$regex": query, "$options": "i" }};
+  }
+  Products.find(queryObj).sort([cond]).exec((err, products) => {
+     res.render('products.html', {products: products, q: query});
  });
 });
 

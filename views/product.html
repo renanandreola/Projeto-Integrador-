@@ -6,14 +6,14 @@
   <h1 class="display-4">{{ product.name }}</h1>
   <br>
   <h2 class="description-title p-3">DESCRIÇÃO</h2>
-  <p class="p-3">{{ product.description | striptags(true) | escape | nl2br }}</p>
+  <p class="p-3" align="justify">{{ product.description | striptags(true) | escape | nl2br }}</p>
   <input type="hidden" name="productId" id="productId" value="{{ product.id }}" />
   <p class="p-3">
     <img src="{{ product.url }}" width="50%" alt="">
   </p>
   <!--<p class="small"><strong>Ref: {{ product.id }}</strong></p>-->
   <hr />
-  <button id="addProduct" class="btn float-right btn-danger">Adicionar produto</button>
+  <button id="addProduct" class="btn float-right btn-danger">Adicionar ao carrinho</button>
   <div class="clearfix"></div>
 </div>
 

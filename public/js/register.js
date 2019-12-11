@@ -16,7 +16,7 @@ function send (event) {
   var name = $("#name").val();
   var lastname = $("#lastname").val();
   var email = $("#email").val();
-  var phone = parseInt($("#phone").val());
+  var phone = $("#phone").val();
   var cep = $("#cep").val();
   var state = $("#state").val();
   var city= $("#city").val();
@@ -43,16 +43,10 @@ function send (event) {
       return
   }
 
-  if (isNaN(phone)) {
+  if (phone == "") {
       toastr["error"]("Campo telefone obrigatório");
       return
-  } else {
-
-  if (phone.toString().length<10){
-       toastr["error"]("Informar telefone válido");
-       return
   }
-}
 
   if (cep == "") {
         toastr["error"]("Campo CEP obrigatório");
@@ -221,6 +215,10 @@ else {
      }
  });
 });
+
+
+// PHONE MASK
+$("#phone").mask("(99) 9999-9999?9");
 
 // $(document).ready(function () {
 //   $('form').submit(function (event) {

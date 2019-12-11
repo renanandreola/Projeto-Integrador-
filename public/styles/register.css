@@ -34,4 +34,10 @@ body{
     form div button {
       width: 100%;
     }
+
+    h1.display-4 {
+      color: #F4B400;
+      font-family: fantasy;
+      font-size: 25px;
+    }
   }
