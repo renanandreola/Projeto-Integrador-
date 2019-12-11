@@ -48,7 +48,7 @@ function showCart () {
       var li = $('<li class="mb-5"></li>');
       var add = $('<a class="btn btn-sm btn-outline-success" href>+</a>');
       var sub = $('<a class="btn btn-sm ml-1 btn-outline-danger" href>-</a>');
-      var del = $('<a class="btn btn-sm ml-3 btn-danger" href>Excluir</a>');
+      var del = $('<a class="btn btn-sm ml-3 btn-danger" href>Excluir produto</a>');
 
       add.attr('cart-item', cart[i].id);
       add.click(function (e) {
@@ -71,7 +71,7 @@ function showCart () {
       li.html(
         '<h6>' + cart[i].name + '</h6>' +
         '<p>'+ toBrDigits(cart[i].price * cart[i].quantity) + '</p>' +
-        '<p class="">Quantidade: ' + cart[i].quantity + '</p>'
+        '<p class="">QUANTIDADE: ' + cart[i].quantity + '</p>'
       ).append(add).append(sub).append(del).append('<hr/>')
 
       listCart.append(li);
