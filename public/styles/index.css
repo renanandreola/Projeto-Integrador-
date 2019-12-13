@@ -2,7 +2,6 @@ body{
   background-color: rgb(59, 59, 59);
 }
 
-
 .products {
   list-style: none;
   padding: 0;
@@ -73,7 +72,7 @@ li p.value {
   font-size: 30px;
 }
 
-
+/* DISPOSITIVO MÓVEL */
 @media screen and (max-width: 420px) {
   .products li{
     width: 50%;

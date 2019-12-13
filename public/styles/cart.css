@@ -33,7 +33,6 @@ div.cart {
   background-color: rgb(204, 204, 204);
 }
 
-
 /* DISPOSITIVO MÓVEL */
 @media screen and (max-width: 425px) {
   form div.buttons button.btn  {

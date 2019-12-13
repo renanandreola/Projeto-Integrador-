@@ -58,6 +58,7 @@ li p.value {
   font-size: 30px;
 }
 
+/* DISPOSITIVO MÓVEL */
 @media screen and (max-width: 420px) {
   .products li{
     width: 50%;

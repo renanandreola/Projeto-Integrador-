@@ -5,18 +5,22 @@ function saveCart () {
   sessionStorage.setItem("cart", JSON.stringify(cart));
 }
 
+//
+
 function addQuantity (cartItemId) {
   var item = cart.find(function (cartItem) {
-      return cartItem.id == cartItemId;
+      return cartItem._id == cartItemId;
   });
   item.quantity++;
   saveCart();
   showCart();
 }
 
+//
+
 function subQuantity (cartItemId) {
   var item = cart.find(function (cartItem) {
-      return cartItem.id == cartItemId;
+      return cartItem._id == cartItemId;
   });
   if (item.quantity > 1) {
     item.quantity--;
@@ -25,18 +29,24 @@ function subQuantity (cartItemId) {
   showCart();
 }
 
+//
+
 function deleteItem (cartItemId) {
   cart = cart.filter(function (cartItem) {
-    return cartItem.id != cartItemId;
+    return cartItem._id != cartItemId;
   });
   toastr["error"]("Carrinho", "Item removido");
   saveCart();
   showCart();
 }
 
+//
+
 function toBrDigits (number) {
   return number.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' });
 }
+
+//
 
 function showCart () {
 
@@ -50,19 +60,19 @@ function showCart () {
       var sub = $('<a class="btn btn-sm ml-1 btn-outline-danger" href>-</a>');
       var del = $('<a class="btn btn-sm ml-3 btn-danger" href>Excluir produto</a>');
 
-      add.attr('cart-item', cart[i].id);
+      add.attr('cart-item', cart[i]._id);
       add.click(function (e) {
         e.preventDefault();
         addQuantity($(this).attr('cart-item'));
       });
 
-      sub.attr('cart-item', cart[i].id);
+      sub.attr('cart-item', cart[i]._id);
       sub.click(function (e) {
         e.preventDefault();
         subQuantity($(this).attr('cart-item'));
       })
 
-      del.attr('cart-item', cart[i].id);
+      del.attr('cart-item', cart[i]._id);
       del.click(function (e) {
         e.preventDefault();
         deleteItem($(this).attr('cart-item'));
@@ -82,6 +92,9 @@ function showCart () {
     showCartItems();
   }
 }
+
+//
+
 $(document).ready(function () {
   showCart();
 
@@ -101,9 +114,10 @@ $(document).ready(function () {
       return
     }
 
-    else {
-      toastr["success"]("Carregando...")
-    }
+    // else {
+    //   toastr["success"]("Carregando...")
+    // }
+    
     $.post("/login", {email: email, password: password}, function (res) {
       if (res === 'ok') {
         console.info('Logado');

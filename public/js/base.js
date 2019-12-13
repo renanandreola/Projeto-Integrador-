@@ -16,6 +16,8 @@ toastr.options = {
   "hideMethod": "fadeOut"
 };
 
+//
+
 function showCartItems () {
   var cart = sessionStorage.getItem("cart");
   var quantity = 0;

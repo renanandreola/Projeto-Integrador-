@@ -28,7 +28,6 @@ body{
     background-color: #d3d3d3;
   }
 
-
 /* DISPOSITIVO MÓVEL */
   @media screen and (max-width: 768px) {
     form div button {

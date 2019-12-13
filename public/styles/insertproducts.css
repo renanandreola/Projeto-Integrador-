@@ -55,6 +55,7 @@ table tbody td.urlitem {
   white-space: nowrap;
 }
 
+/* DISPOSITIVO MÓVEL */
 @media screen and (max-width: 768px) {
   h2 {
     font-size: 25px;

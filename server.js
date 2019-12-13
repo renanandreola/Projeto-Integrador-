@@ -8,10 +8,9 @@ const ProductsSchema = require('./Schemas/Products');
 const ClientsSchema = require('./Schemas/Clients');
 const CategoriesSchema = require('./Schemas/Categories');
 const md5 = require('md5');
-
-
 const MONGODB_URL = 'mongodb+srv://renan:renan@projetointegrador-ahvty.gcp.mongodb.net/store?retryWrites=true&w=majority';
 
+//
 
 let env = nunjucks.configure('views', {
     autoescape: true,
@@ -42,6 +41,7 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser: true}, err => {
 
 });
 
+//
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -105,6 +105,8 @@ app.get('/products', (req, res) => {
  });
 });
 
+//
+
 app.get('/c/:slug', (req, res) => {
   Categories.aggregate([
     {$match: {slug: req.params.slug}},
@@ -126,15 +128,17 @@ app.get('/insertproducts', (req, res) => {
       Categories.find().sort('name').exec((err, categories) => {
        res.render('insertproducts.html', {products: products, categories: categories});
      });
- });
+   });
 });
 
 app.get('/contact', (req, res) => {
   res.render('contact.html');
 });
+
 app.get('/nextcart', (req, res) => {
   res.render('nextcart.html');
 });
+
 app.get('/cart', (req, res) => {
  res.render('cart.html');
 });
@@ -179,17 +183,9 @@ app.post('/login', (req, res) => {
   })
 })
 
-
 app.get('/product', (req, res) => {
       res.render('product.html');
 });
-
-
-
-
-
-
-
 
 app.get('/categories', (req, res) => {
   Categories.find((err, obj) => {
@@ -263,8 +259,8 @@ app.get('/product/:id', (req, res) => {
   });
 });
 
-
 // APIs
+
 app.get('/api/products', (req, res) => {
   res.send(listProducts);
 });

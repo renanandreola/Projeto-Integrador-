@@ -1,6 +1,8 @@
 {% extends './layouts/base.html' %}
 
 {% block content %}
+<!-- PÁGINA INDIVIDUAL DOS PRODUTOS -->
+
 <div class="box p-5 jumbotron mt-4">
     <h3 class="big float-right">{{ product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }} </h3>
   <h1 class="display-4">{{ product.name }}</h1>
@@ -13,7 +15,7 @@
   </p>
   <!--<p class="small"><strong>Ref: {{ product.id }}</strong></p>-->
   <hr />
-  <button id="addProduct" class="btn float-right btn-danger">Adicionar ao carrinho</button>
+  <button id="addProduct" class="btn float-right btn-danger addProduct">Adicionar ao carrinho</button>
   <div class="clearfix"></div>
 </div>
 
