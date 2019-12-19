@@ -135,6 +135,10 @@ app.get('/contact', (req, res) => {
   res.render('contact.html');
 });
 
+app.get('/adm', (req, res) => {
+  res.render('adm.html');
+});
+
 app.get('/nextcart', (req, res) => {
   res.render('nextcart.html');
 });
