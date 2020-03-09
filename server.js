@@ -8,7 +8,23 @@ const ProductsSchema = require('./Schemas/Products');
 const ClientsSchema = require('./Schemas/Clients');
 const CategoriesSchema = require('./Schemas/Categories');
 const md5 = require('md5');
-const MONGODB_URL = 'mongodb+srv://renan:renan@projetointegrador-ahvty.gcp.mongodb.net/store?retryWrites=true&w=majority';
+//const MONGODB_URL = 'mongodb+srv://renan:renan@projetointegrador-ahvty.gcp.mongodb.net/store?retryWrites=true&w=majority';
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://renan:renan@projetointegrador-ahvty.gcp.mongodb.net/store?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+var port = process.env.PORT || 3000;
+
+//MONGO
+app.listen(port, () => {
+  console.log('ProjetoIntegrador ESCUTANDO NA PORTA -> localhost:' + port);
+});
 
 //
 
@@ -21,13 +37,13 @@ app.set('engine', env);
 
 require('useful-nunjucks-filters')(env);
 
-var port = process.env.PORT || 3000;
+
 
 const Products = mongoose.model('Product', ProductsSchema);
 const Clients = mongoose.model('Clients', ClientsSchema);
 const Categories = mongoose.model('Categories', CategoriesSchema);
-
-mongoose.connect(MONGODB_URL, {useNewUrlParser: true}, err => {
+/*
+mongoose.connect(MONGODB_URL, { useNewUrlParser: true }, err => {
     if (err) {
         console.error('[SERVER_ERROR] MongoDB Connection:', err);
         process.exit(1);
@@ -40,7 +56,7 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser: true}, err => {
     });
 
 });
-
+*/
 //
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
@@ -65,7 +81,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  Products.find().sort('+price').limit(12).exec((err, obj) => {
+  Products.find().sort('+price').limit(6).exec((err, obj) => {
     console.info(obj.length);
     res.render('index.html', {products: obj});
   });
