@@ -8,10 +8,10 @@ const ProductsSchema = require('./Schemas/Products');
 const ClientsSchema = require('./Schemas/Clients');
 const CategoriesSchema = require('./Schemas/Categories');
 const md5 = require('md5');
-//const MONGODB_URL = 'mongodb+srv://renan:renan@projetointegrador-ahvty.gcp.mongodb.net/store?retryWrites=true&w=majority';
+//const MONGODB_URL = '';
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://renan:renan@projetointegrador-ahvty.gcp.mongodb.net/store?retryWrites=true&w=majority";
+const uri = "";
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
